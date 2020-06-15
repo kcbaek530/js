@@ -7,9 +7,32 @@
 <body>
    <p id="result"></p>
    <script>
-      // document.cookie = "username = Kevin";
+      document.cookie = "username=kevin";
+      document.cookie = "sex=male";
+      document.cookir = "age=20";
+
       var x = document.cookie;
-      document.getElementById("result").innerHTML = x;
+
+      document.getElementById("result").innerHTML = getCookie(username);
+      
+
+      function getCookie(cname) 
+      {
+         var name = cname + "=";
+         var decodedCookie = decodeURIComponent(document.cookie);
+         var ca = decodedCookie.spilt(";");
+         for (i=0; i<ca.length ; i++)
+            { var c = ca[i] ;
+               while (c.charAt(0) == "")
+               { c=c.substring(1); }
+               if (c.indexOf(name) == 0)
+               { return c.substring(name.length, c.length);}
+            }
+            return "";
+      }         
+
+      }
+
    </script>
 </body>
 </html>
